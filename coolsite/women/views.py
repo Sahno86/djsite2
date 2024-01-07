@@ -8,6 +8,8 @@ menu = [{'title': "О сайте", 'url_name': 'about'},
         {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Войти", 'url_name': 'login'},
         ]
+
+
 def index(request):
     posts = Women.objects.all()
     cats = Category.objects.all()
@@ -34,7 +36,7 @@ def login(request):
     return HttpResponse("Авторизация")
 
 
-def addpage(reauest):
+def addpage(request):
     return HttpResponse("Добавление статьи")
 
 
@@ -48,6 +50,7 @@ def show_post(request, post_id):
 
 def show_category(request, cat_id):
     posts = Women.objects.filter(cat_id=cat_id)
+
     cats = Category.objects.all()
 
     if len(posts) == 0:

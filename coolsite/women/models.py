@@ -15,7 +15,7 @@ class Women(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('category', kwargs={'cat_id': self.pk})
+        return reverse('post', kwargs={'post_id': self.pk})
 
 
 class Category(models.Model):
@@ -25,4 +25,4 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('post', kwargs={'post_id': self.pk})
+        return reverse('category', kwargs={'cat_id': self.pk})
