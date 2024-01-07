@@ -57,7 +57,7 @@ def show_category(request, cat_id):
         raise Http404()
 
     context = {
-        'post': posts,
+        'posts': posts,
         'cats': cats,
         'menu': menu,
         'title': 'Отображение по рубрикам',
